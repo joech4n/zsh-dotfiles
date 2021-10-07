@@ -12,6 +12,46 @@
 "@\U000D" = (moveToEndOfParagraph:, insertNewline:);
 // Insert blank line above paragraph (Command Shift Enter)
 "@$\U000D" = (moveToBeginningOfParagraph:, moveLeft:, insertNewline:);
+// select entire line/paragraph
+"~S" = (moveToBeginningOfParagraph:, moveToEndOfParagraphAndModifySelection:, moveRightAndModifySelection:);
+// select from beginning of paragraph to last character
+"~s" = (moveToBeginningOfParagraph:, moveToEndOfParagraphAndModifySelection:);
+// bookmark
+"~1" = (setMark:);
+// jump to bookmark
+"~2" = (swapWithMark:,centerSelectionInVisibleArea:);
+// move line up
+"^@\UF700" = (selectParagraph:, setMark:, deleteToMark:, moveLeft:, moveToBeginningOfParagraph:, yank:, moveLeft:, selectToMark:, moveLeft:);
+// move line down
+"^@\UF701" = (selectParagraph:, setMark:, deleteToMark:, moveToEndOfParagraph:, moveRight:, setMark:, yank:, moveLeft:, selectToMark:);
+
+"^@s" = {   // surround commands
+    // wrap () with spaces
+    "(" = (delete:, inserttext:, "( ", yank:, inserttext:, " ", moveleft:, inserttext:, " )", deleteforward:);
+    // wrap () no spaces
+    ")" = (delete:, inserttext:, "( ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, ")", deleteforward:);
+    // wrap [] with spaces
+    "[" = (delete:, inserttext:, "[ ", yank:, inserttext:, " ", moveleft:, inserttext:, " ]", deleteforward:);
+    // wrap [] no spaces
+    "]" = (delete:, inserttext:, "[ ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, "]", deleteforward:);
+    // wrap {} with spaces
+    "{" = (delete:, inserttext:, "{ ", yank:, inserttext:, " ", moveleft:, inserttext:, " }", deleteforward:);
+    // wrap {} no spaces
+    "}" = (delete:, inserttext:, "{ ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, "}", deleteforward:);
+    // wrap <> with spaces
+    "<" = (delete:, inserttext:, "< ", yank:, inserttext:, " ", moveleft:, inserttext:, " >", deleteforward:);
+    // wrap <> no spaces
+    ">" = (delete:, inserttext:, "< ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, ">", deleteforward:);
+    // wrap single quotes
+    "'" = (delete:, inserttext:, "' ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, "'", deleteforward:);
+    // wrap backticks
+    "`" = (delete:, inserttext:, "` ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, "`", deleteforward:);
+    // wrap double quote
+    "\"" = (delete:, inserttext:, "\" ", deletebackward:, yank:, inserttext:, " ", moveleft:, inserttext:, "\"", deleteforward:);
+};
+
+
+// https://github.com/ttscoff/KeyBindings/blob/master/DefaultKeyBinding.dict
 
 // select word
 "~w" = (selectWord:);
