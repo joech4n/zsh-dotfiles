@@ -1,15 +1,15 @@
 cask_args appdir: '/Applications'
 
-tap "caskroom/cask"
-tap "caskroom/versions"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/bundle"
 tap "homebrew/core"
-tap "homebrew/dupes"
+# tap "homebrew/dupes"
 tap "laurent22/massren"
 tap "neovim/neovim"
 tap "rogual/neovim-dot-app"
 tap "d12frosted/emacs-plus"
-tap "caskroom/fonts"
+tap "homebrew/cask-fonts"
 
 # Install more recent versions of some OS X tools.
 brew "grep"
@@ -76,7 +76,6 @@ cask "1password"
 cask "alfred"
 cask "appcleaner"
 cask "awareness"
-#cask "bartender" # Bartender 3 last supported in OSX Catalina 10.15
 cask "betterzip"
 cask "bitbar"
 cask "cord"
@@ -86,26 +85,24 @@ cask "discord"
 cask "disk-inventory-x"
 cask "dozer"
 cask "duet"
+cask "espanso"
 cask "fantastical"
 cask "font-inconsolata"
 cask "font-source-code-pro"
-cask "flux"
 cask "franz"
 cask "fsnotes"
 cask "google-chrome"
 cask "google-hangouts"
 cask "hazel"
 cask "hyper"
-cask "iterm2"
 cask "keyboard-cleaner"
+cask "kitty"
 cask "lastpass"
 cask "launchcontrol"
 cask "licecap"
 cask "limechat"
 cask "macdown"
 cask "moom"
-cask "nvalt"
-cask "osxfuse"
 cask "qlcolorcode"
 cask "qlimagesize"
 cask "qlmarkdown"
@@ -119,19 +116,17 @@ cask "rocket"
 cask "skype"
 cask "slimbatterymonitor"
 cask "spotify"
-cask "sublime-text"
 cask "suspicious-package"
 cask "trim-enabler"
 cask "veracrypt"
 cask "vimr"
+cask "visual-studio-code"
 mas "1Keyboard", id: 766939888
 mas "Evernote", id: 406056744
-mas "Growl", id: 467939042
 mas "Helium", id: 1054607607
 mas "Levelator", id: 1493326487
 mas "Meeter", id: 1510445899
 mas "Messenger", id: 1480068668
-mas "MindMaple Lite", id: 770293173
 mas "MindNode", id: 1289197285
 mas "Pixelmator", id: 407963104
 mas "Skitch", id: 425955336
