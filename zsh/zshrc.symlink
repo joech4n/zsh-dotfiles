@@ -128,8 +128,11 @@ if (( $+commands[brew] )); then
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 fi
 
-# chruby
+# chruby (Intel Mac)
 xsource /usr/local/share/chruby/chruby.sh \
+  /usr/local/share/chruby/auto.sh
+# chruby (M1 Mac)
+xsource /opt/homebrew/share/chruby/chruby.sh \
   /usr/local/share/chruby/auto.sh
 
 # GNU ls colors
