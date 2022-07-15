@@ -106,19 +106,20 @@
    :desc "Switch workspace buffer"  :n "bw" #'+ivy/switch-workspace-buffer  ;; easier
    :desc "Find file in project"     :n "SPC" #'find-file-in-project
 
-   ;; Recursive find-file in a target directory
-   :desc "Find file in directory" :n "f/" (lambda! (counsel-file-jump nil (read-directory-name "From directory: ")))
+   ;; Recursive find-file in a target directory (broken as of 2022-07-15)
+   ;; :desc "Find file in directory" :n "f/" (lambda! (counsel-file-jump nil (read-directory-name "From directory: ")))
    ;; Recursive grep in target directory (broken as of 2021-03-03)
    ;; :n "/" nil
    ;; :desc "Target directory" :n "//" (lambda! (+ivy/rg nil nil (read-directory-name "From directory: ")))
-   :desc "Find file in subdirectory" :n "ff"  (lambda!
-                                               (let* ((proot (read-directory-name "From parent directory: "))
-                                                      (pdir (expand-file-name (projectile-complete-dir proot)
-                                                                              proot))
-                                                      (file (projectile-completing-read
-                                                             "Find file: "
-                                                             (projectile-project-files pdir))))
-                                                 (find-file (expand-file-name file pdir))))
+   ;; Broken as of 2022-07-15
+   ;; :desc "Find file in subdirectory" :n "ff"  (lambda!
+   ;;                                             (let* ((proot (read-directory-name "From parent directory: "))
+   ;;                                                    (pdir (expand-file-name (projectile-complete-dir proot)
+   ;;                                                                            proot))
+   ;;                                                    (file (projectile-completing-read
+   ;;                                                           "Find file: "
+   ;;                                                           (projectile-project-files pdir))))
+   ;;                                               (find-file (expand-file-name file pdir))))
 
    ;; Prefix bindings
    (:prefix ("j" . "avy")
