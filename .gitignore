@@ -1,9 +1,10 @@
 *.log
+.history/*
 emacs/doom.d/scratch
 system/maid.symlink/maid.log
 
 # don't store vim plugins
-vim/vim.symlink/autoload/plug.vim
+vim/vim.symlink/autoload/*
 vim/vim.symlink/plugged/*
 vim/vim.symlink/plugin/*
 vim/vim.symlink/plugins/*
