@@ -9,7 +9,6 @@ path=(
   $HOME/{,s}bin{,.private,.linux}(N)
   $HOME/{.dotfiles,.fzf}/bin(N)
   $HOME/.cargo/bin(N)
-  ${GOPATH//://bin:}/bin(N)
   $HOME/.local/bin(N)
   $path
 )
