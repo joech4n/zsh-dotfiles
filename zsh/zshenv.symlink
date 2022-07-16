@@ -1,8 +1,4 @@
-# -*- mode: sh -*-
-# Copied from https://github.com/sorin-ionescu/prezto/blob/09e83ed2829d13b8102af1bf660efbf99e0f896b/runcoms/zshenv
-# and updated
-
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
-fi
+function {
+  local file="${ZDOTDIR:-$HOME}/.zprezto/runcoms/zshenv"
+  [[ -s ${file} ]] && source ${file}
+}
