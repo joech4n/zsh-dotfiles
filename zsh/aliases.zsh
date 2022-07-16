@@ -55,6 +55,13 @@ alias copylastoutput="fc -e -|pbcopy && echo Copied output of last command to cl
 alias count='sort | uniq -c | sort -rn'
 alias cpath='python -c "import os; import sys; print(os.path.realpath(sys.argv[1]))"'
 
+# diff-so-fancy
+if (( $+commands[diff-so-fancy] )); then
+  dfs() {
+    git diff --color --no-index $1 $2 | diff-so-fancy
+  }
+fi
+
 edownload() {
     if [ $# -ne 2 ];
     then
