@@ -517,7 +517,7 @@ clipboard_control write-clipboard write-primary no-append
 #: you are probably better off just hiding the titlebar with
 #: macos_hide_titlebar.
 
-macos_hide_titlebar yes
+hide_window_decorations yes
 
 #: Hide the kitty window's title bar on macOS.
 
