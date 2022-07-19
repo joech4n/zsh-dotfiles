@@ -4,6 +4,9 @@ function {
   [[ -s ${file} ]] && source ${file}
 }
 
+export EDITOR='vi'
+export VISUAL="$EDITOR"
+
 # (N) causes assignment not to fail if dir doesn't exist.
 path=(
   $HOME/{,s}bin{,.private,.linux}(N)
