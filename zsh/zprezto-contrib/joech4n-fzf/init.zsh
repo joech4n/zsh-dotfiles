@@ -1,7 +1,7 @@
 # Fzf - A command-line fuzzy finder written in Go -  https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
 xsource /usr/share/doc/fzf/examples/{completion,key-bindings}.zsh
 # OSX
-if (( $+commands[brew] )); then
+if check_com -c brew; then
   xsource $(brew --prefix)/var/homebrew/linked/fzf/shell/{completion,key-bindings}.zsh
 fi
 
@@ -22,7 +22,7 @@ export FZF_ALT_C_OPTS="--select-1 --exit-0"
 if ((${+FZF_FORCE_DEFAULT_SEARCH})); then
   # nop - i.e. use default file search, probably `find`
   # can set in ~/.zshrc.pre, which gets sourced by grml config
-elif (( $+commands[fd] )); then
+elif check_com -c fd; then
   # Setting fd as the default source for fzf
   FD_OPTS="--hidden --follow --exclude .git"
   export FZF_DEFAULT_COMMAND="fd --type file $FD_OPTS"
@@ -39,7 +39,7 @@ elif (( $+commands[fd] )); then
   _fzf_compgen_dir() {
     fd --type d --hidden --follow --exclude ".git" . "$1"
   }
-elif (( $+commands[rg] )); then
+elif check_com -c rg; then
   export FZF_DEFAULT_COMMAND="rg --files --follow --hidden --no-messages"
 fi
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
