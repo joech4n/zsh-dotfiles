@@ -1,6 +1,7 @@
 .DS_Store
 *~
 *.swp
+.history/
 
 # I don't use Vim's netrw
 vim/vim.symlink/.netrwhist
