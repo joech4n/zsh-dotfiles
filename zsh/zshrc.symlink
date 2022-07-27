@@ -145,8 +145,6 @@ fi
 # GNU ls colors
 if [ -e ~/.dir_colors ]; then
   (( $+commands[dircolors] )) && eval $(dircolors -b ~/.dir_colors)
-else
-  curl https://raw.githubusercontent.com/huyz/dircolors-solarized/master/dircolors.ansi-universal -o ~/.dir_colors
 fi
 
 # For gtags per https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Btags/gtags#install-on-osx-using-homebrew
