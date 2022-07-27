@@ -1,7 +1,9 @@
 # Fzf - A command-line fuzzy finder written in Go -  https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
-xsource /usr/share/doc/fzf/examples/key-bindings.zsh
-xsource /usr/share/doc/fzf/examples/completion.zsh
-xsource ~/.fzf.zsh
+xsource /usr/share/doc/fzf/examples/{completion,key-bindings}.zsh
+# OSX
+if check_com -c brew; then
+  xsource $(brew --prefix)/var/homebrew/linked/fzf/shell/{completion,key-bindings}.zsh
+fi
 
 export FZF_DEFAULT_OPTS="--height 90% --reverse --inline-info --cycle \
     --color hl:reverse,hl+:reverse \
