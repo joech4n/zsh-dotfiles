@@ -177,7 +177,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '(("Source Code Pro"
+   dotspacemacs-default-font '(("Inconsolata"
                                 :size 18
                                 :weight normal
                                 :width normal
@@ -411,7 +411,7 @@ you should place your code here."
       (set-display-table-slot standard-display-table 'wrap ?\b) ;; disable wrap character
       )
     )
-  (add-to-list 'default-frame-alist '(font . "Source Code Pro-18"))
+  (add-to-list 'default-frame-alist '(font . "Inconsolata-18"))
 
   ;; Start persistent server
   (require 'server) (unless (server-running-p) (server-start))
