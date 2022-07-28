@@ -1,5 +1,3 @@
-# Install custom prompt
-brew install npm
 npm install --global pure-prompt
 
 # Install k from https://github.com/supercrabtree/k
