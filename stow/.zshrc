@@ -157,3 +157,5 @@ xsource ${HOME}/.dotfiles/zsh/aliases.zsh
 xsource ${HOME}/.fzf.zsh
 xsource ${HOME}/.zshrc.local
 xsource ${HOME}/.zshrc.secret # last, for secrets
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

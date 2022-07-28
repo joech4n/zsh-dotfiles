@@ -1,10 +1,12 @@
 *.log
 .history/*
-emacs/doom.d/scratch
-system/maid.symlink/maid.log
+stow/.doom.d/scratch
 
 # don't store vim plugins
-vim/vim.symlink/autoload/*
-vim/vim.symlink/plugged/*
-vim/vim.symlink/plugin/*
-vim/vim.symlink/plugins/*
+stow/.vim/autoload/*
+stow/.vim/plugged/*
+stow/.vim/plugin/*
+stow/.vim/plugins/*
+
+# I don't use Vim's netrw
+stow/.vim/.netrwhist
