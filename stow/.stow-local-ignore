@@ -6,3 +6,5 @@
 
 # However, .git must be in this list:
 \.git
+
+.DS_Store

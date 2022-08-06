@@ -1,5 +1,6 @@
 *.log
 .history/*
+stow/.config/karabiner/automatic_backups
 stow/.doom.d/scratch
 
 # don't store vim plugins
