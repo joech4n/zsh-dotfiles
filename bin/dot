@@ -116,7 +116,7 @@ print_status2 $? ${MESSAGE}
 
 # Doom Emacs
 MESSAGE="update Doom Emacs"; print_status1 "${MESSAGE}"
-~/.emacs.d/bin/doom -y upgrade
+~/.emacs.d/bin/doom upgrade
 print_status2 $? ${MESSAGE}
 
 ################################################################################
@@ -155,4 +155,3 @@ if [[ "$(uname)" == "Darwin" ]]; then
     clr_green "Mac App Store up to date."
   fi
 fi
-
