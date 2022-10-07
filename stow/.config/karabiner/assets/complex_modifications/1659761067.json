@@ -1,1 +1,0 @@
-{"title":"Right Shift to Hyper When Held","rules":[{"description":"Right Shift to Hyper When Held","manipulators":[{"type":"basic","from":{"key_code":"right_shift","modifiers":{"optional":["any"]}},"to_if_alone":[{"key_code":"right_shift"}],"to_if_held_down":[{"key_code":"left_shift","modifiers":["left_command","left_control","left_option"]}]}]}]}
