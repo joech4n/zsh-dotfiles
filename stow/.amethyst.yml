@@ -1,0 +1,27 @@
+layouts:
+    - tall
+    - fullscreen
+    - 3column-middle
+    - bsp
+    - two-pane
+
+mod1:
+    - option
+    - shift
+mod2:
+    - option
+    - shift
+    - control
+
+mouse-resizes-windows: true
+
+floating:
+    - net.kovidgoyal.kitty
+    - com.google.Chrome
+    - com.1password.1password
+    - company.thebrowser.Browser
+    - com.apple.systempreferences
+
+toggle-focus-follows-mouse:
+    mod: mod1
+    key: x
