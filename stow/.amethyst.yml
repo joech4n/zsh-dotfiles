@@ -1,7 +1,7 @@
 layouts:
     - tall
     - fullscreen
-    - 3column-middle
+    - middle-wide
     - bsp
     - two-pane
 
