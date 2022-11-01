@@ -17,7 +17,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Right Shift to Bleh [⌥⇧] (` if alone)",
+                        "description": "Right Shift to Bleh [⌥⇧] (~ if alone)",
                         "manipulators": [
                             {
                                 "from": {
@@ -75,7 +75,7 @@
                         ]
                     },
                     {
-                        "description": "Right Cmd to Meh [⌃⌥⇧], (~ if alone)",
+                        "description": "Right Cmd to Meh [⌃⌥⇧], (` if alone)",
                         "manipulators": [
                             {
                                 "from": {
