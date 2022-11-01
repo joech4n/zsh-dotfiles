@@ -17,7 +17,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Right Shift to shift+option (Bleh), ` if alone",
+                        "description": "Right Shift to Bleh [⌥⇧] (` if alone)",
                         "manipulators": [
                             {
                                 "from": {
@@ -49,7 +49,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock to Hyper (Esc if alone)",
+                        "description": "Caps Lock to Hyper [⌘⌃⌥⇧] (Esc if alone)",
                         "manipulators": [
                             {
                                 "from": {
@@ -75,7 +75,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock → Meh Key (⌃⌥⇧) (Caps Lock if alone)",
+                        "description": "Caps Lock to Meh [⌃⌥⇧], (~ if alone)",
                         "manipulators": [
                             {
                                 "from": {
