@@ -75,7 +75,7 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock to Meh [⌃⌥⇧], (~ if alone)",
+                        "description": "Right Cmd to Meh [⌃⌥⇧], (~ if alone)",
                         "manipulators": [
                             {
                                 "from": {
