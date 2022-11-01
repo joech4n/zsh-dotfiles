@@ -17,7 +17,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Right Shift to shift+option (Bleh)",
+                        "description": "Right Shift to shift+option (Bleh), ` if alone",
                         "manipulators": [
                             {
                                 "from": {
