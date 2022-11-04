@@ -367,6 +367,7 @@ Plug 'tpope/vim-jdaddy' " json editing and pretty printing
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " obj and motions
 Plug 'bkad/CamelCaseMotion'
@@ -404,6 +405,25 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" firenvim
+let g:firenvim_config = {
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+
+let fc = g:firenvim_config['localSettings']
+let fc['.*'] = { 'takeover': 'never', 'priority': 1 }
 
 " Custom fzf mappings, inspired from
 " https://github.com/zenbro/dotfiles/blob/d3f4bd3136aab297191c062345dfc680abb1efac/.nvimrc#L225-L233
