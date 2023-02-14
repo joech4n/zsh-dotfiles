@@ -245,6 +245,8 @@
     {:des   "right_command to ` when pressed alone"
          :rules [[:##right_command :right_command nil {:alone :grave_accent_and_tilde}]]}
 
+    {:des   "Right Shift to Bleh [⌥⇧] (~ if alone)"
+         :rules [[:##right_shift :!Oright_shift nil {:alone :!Sgrave_accent_and_tilde}]]}
 ] ;; main list
 
 }
