@@ -1,0 +1,1 @@
+/usr/local/google/home/chanjoe/.nvim.local/nvgoog.lua
