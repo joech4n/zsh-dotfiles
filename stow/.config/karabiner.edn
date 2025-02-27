@@ -235,6 +235,7 @@
             [:##9 :!!9]
             [:##0 :!!0]
             [:##semicolon :!!semicolon] ;; `o` in Colemak
+            [:##quote :!!quote] ;; `'` in Colemak
     ]}
 
     {:des   "right_command to ` when pressed alone"
