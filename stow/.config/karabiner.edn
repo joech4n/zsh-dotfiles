@@ -243,6 +243,9 @@
 
     {:des   "Right Shift to Bleh [⌥⇧] (? if alone)"
          :rules [[:##right_shift :!Oright_shift nil {:alone :!Sslash}]]}
+
+    {:des   "left_option to esc when pressed alone"
+         :rules [[:##left_option :left_option nil {:alone :escape}]]}
 ] ;; main list
 
 }
