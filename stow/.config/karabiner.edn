@@ -249,6 +249,9 @@
 
     {:des   "right_control to ! when pressed alone"
          :rules [[:##right_control :right_control nil {:alone :!S1}]]}
+
+    {:des   "left_control to ! when pressed alone"
+         :rules [[:##left_control :left_control nil {:alone :!S2}]]}
 ] ;; main list
 
 }
