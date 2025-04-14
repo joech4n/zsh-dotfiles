@@ -252,6 +252,9 @@
 
     {:des   "left_control to ! when pressed alone"
          :rules [[:##left_control :left_control nil {:alone :!S2}]]}
+
+    {:des   "tab to Shift + Command when held down"
+         :rules [[:##tab :!Sleft_command nil {:alone :tab}]]}
 ] ;; main list
 
 }

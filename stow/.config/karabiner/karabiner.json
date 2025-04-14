@@ -906,6 +906,24 @@
           } ],
           "type" : "basic"
         } ]
+      }, {
+        "description" : "tab to Shift + Command when held down",
+        "manipulators" : [ {
+          "to_if_alone" : [ {
+            "key_code" : "tab"
+          } ],
+          "from" : {
+            "key_code" : "tab",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "left_command",
+            "modifiers" : [ "left_shift" ]
+          } ],
+          "type" : "basic"
+        } ]
       } ]
     },
     "devices" : [ {
