@@ -907,10 +907,11 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "tab to Shift + Command when held down",
+        "description" : "tab is tab, Shift+Command if held",
         "manipulators" : [ {
-          "to_if_alone" : [ {
-            "key_code" : "tab"
+          "to_if_held_down" : [ {
+            "key_code" : "left_command",
+            "modifiers" : [ "left_shift" ]
           } ],
           "from" : {
             "key_code" : "tab",
@@ -919,8 +920,7 @@
             }
           },
           "to" : [ {
-            "key_code" : "left_command",
-            "modifiers" : [ "left_shift" ]
+            "key_code" : "tab"
           } ],
           "type" : "basic"
         } ]

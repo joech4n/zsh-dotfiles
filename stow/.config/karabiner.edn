@@ -253,8 +253,13 @@
     {:des   "left_control to ! when pressed alone"
          :rules [[:##left_control :left_control nil {:alone :!S2}]]}
 
-    {:des   "tab to Shift + Command when held down"
-         :rules [[:##tab :!Sleft_command nil {:alone :tab}]]}
+
+    {:des   "tab is tab, Shift+Command if held"
+        :rules [[:##tab :tab nil {:held :!Sleft_command}]]}
+    ;; For some reason, this inverse doesn't work in Google web apps to autocomplete chips.
+    ;; {:des   "tab to Shift + Command when held down"
+    ;;      :rules [[:##tab :!Sleft_command nil {:alone :tab}]]}
+
 ] ;; main list
 
 }
