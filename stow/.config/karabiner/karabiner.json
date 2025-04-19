@@ -43,7 +43,7 @@
             "shell_command" : "open -a \"$HOME/Applications/Chrome Apps.localized/Google Chat.app\""
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -59,7 +59,7 @@
             "shell_command" : "open -a 'Visual Studio Code.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -75,7 +75,7 @@
             "shell_command" : "open -a 'Finder.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -91,7 +91,7 @@
             "shell_command" : "open -a 'Telegram.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -107,7 +107,7 @@
             "shell_command" : "open -a 'Discord.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -123,7 +123,7 @@
             "shell_command" : "open -a Arc.app"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -139,7 +139,7 @@
             "shell_command" : "open -a 'kitty.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -155,7 +155,7 @@
             "shell_command" : "open -a 'Messenger.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -171,7 +171,7 @@
             "shell_command" : "open -a \"$HOME/Applications/Chrome Apps.localized/Google Calendar.app\""
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -187,7 +187,7 @@
             "shell_command" : "open -a 'Google Chrome.app'"
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -203,7 +203,7 @@
             "shell_command" : "open -a \"$HOME/Applications/Chrome Apps.localized/Gmail.app\""
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -219,7 +219,7 @@
             "shell_command" : "open -a \"$HOME/Applications/Chrome Apps.localized/Cider V.app\""
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -236,7 +236,7 @@
             "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
           } ],
           "conditions" : [ {
-            "name" : "sub-layer-mode",
+            "name" : "o-sub-layer-mode",
             "value" : 1,
             "type" : "variable_if"
           } ],
@@ -999,7 +999,7 @@
         }, {
           "to_if_alone" : [ {
             "set_variable" : {
-              "name" : "sub-layer-mode",
+              "name" : "o-sub-layer-mode",
               "value" : 1
             }
           } ],
@@ -1008,13 +1008,13 @@
               "key_code" : "semicolon"
             }, {
               "set_variable" : {
-                "name" : "sub-layer-mode",
+                "name" : "o-sub-layer-mode",
                 "value" : 0
               }
             } ],
             "to_if_canceled" : [ {
               "set_variable" : {
-                "name" : "sub-layer-mode",
+                "name" : "o-sub-layer-mode",
                 "value" : 0
               }
             } ]
@@ -1024,7 +1024,7 @@
           },
           "to" : [ {
             "set_variable" : {
-              "name" : "sub-layer-mode",
+              "name" : "o-sub-layer-mode",
               "value" : 1
             }
           } ],
