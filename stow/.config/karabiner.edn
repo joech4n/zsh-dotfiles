@@ -1,265 +1,248 @@
-{
-    ;; Forked from https://gist.github.com/kaushikgopal/ff7a92bbc887e59699c804b59074a126
-    ;; Per https://news.ycombinator.com/item?id=34757898
-    ;; Keys: https://github.com/yqrashawn/GokuRakuJoudo/blob/0d96515dc7f533c934f6320d8fd0a41f15ac8413/src/karabiner_configurator/keys_info.clj
-    ;; :!Ca is keycode :a and prefix a with !C
+{;; Forked from https://gist.github.com/kaushikgopal/ff7a92bbc887e59699c804b59074a126
+ ;; Per https://news.ycombinator.com/item?id=34757898
+ ;; Keys: https://github.com/yqrashawn/GokuRakuJoudo/blob/0d96515dc7f533c934f6320d8fd0a41f15ac8413/src/karabiner_configurator/keys_info.clj
+ ;; :!Ca is keycode :a and prefix a with !C
 
-    ;; C  | left_command
-    ;; T  | left_control
-    ;; O  | left_option
-    ;; S  | left_shift
-    ;; F  | fn
-    ;; Q  | right_command
-    ;; W  | right_control
-    ;; E  | right_option
-    ;; R  | right_shift
-    ;; P  | caps_lock
-    ;; !! | command + control + optional + shift (hyper)
+ ;; C  | left_command
+ ;; T  | left_control
+ ;; O  | left_option
+ ;; S  | left_shift
+ ;; F  | fn
+ ;; Q  | right_command
+ ;; W  | right_control
+ ;; E  | right_option
+ ;; R  | right_shift
+ ;; P  | caps_lock
+ ;; !! | command + control + optional + shift (hyper)
 
-    ;; code for all this:
-    ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/b9b334a187379f9bc8182ad59e2cca2a1789e9c0/src/karabiner_configurator/keys.clj#L68
+ ;; code for all this:
+ ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/b9b334a187379f9bc8182ad59e2cca2a1789e9c0/src/karabiner_configurator/keys.clj#L68
 
-    ;; FROM modifiers
-    ;; to understand better how modifiers work in karabiner
-    ;; karabiner definition of mandatory and optional
-    ;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+ ;; FROM modifiers
+ ;; to understand better how modifiers work in karabiner
+ ;; karabiner definition of mandatory and optional
+ ;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
 
-    ;;    | no modifier
-    ;;                  input key maps to output key exactly
-    ;;                  adding any modifier will cancel the event
+ ;;    | no modifier
+ ;;                  input key maps to output key exactly
+ ;;                  adding any modifier will cancel the event
 
-    ;; !  | mandatory
-    ;;                  specified modifier is removed in output (to event)
-    ;;                  specified modifiers must be present for event to occur
-    ;;                  adding any other modifier will cancel the event
+ ;; !  | mandatory
+ ;;                  specified modifier is removed in output (to event)
+ ;;                  specified modifiers must be present for event to occur
+ ;;                  adding any other modifier will cancel the event
 
-    ;; #  | optional (single)
-    ;;                  specified modifier is kept in output (to event)
-    ;;                  one (or none) of the specified modifiers must be present
-    ;;                  adding any other modifier will cancel the event
+ ;; #  | optional (single)
+ ;;                  specified modifier is kept in output (to event)
+ ;;                  one (or none) of the specified modifiers must be present
+ ;;                  adding any other modifier will cancel the event
 
-    ;; ## | optional any
-    ;;                  specified modifier is removed in output (to event)
-    ;;                  specified modifiers *must* be present for event to occur
-    ;;                  adding any other modifier will add to output event
-    ;;                  (what you typically expect, additional modifiers tacked on)
-    ;;
-    ;; need to prefix C T O S F with ! or #
-    ;;
+ ;; ## | optional any
+ ;;                  specified modifier is removed in output (to event)
+ ;;                  specified modifiers *must* be present for event to occur
+ ;;                  adding any other modifier will add to output event
+ ;;                  (what you typically expect, additional modifiers tacked on)
+ ;;
+ ;; need to prefix C T O S F with ! or #
+ ;;
 
 
-:profiles {
-    :Default {
-        :default true
+ :profiles {:Default {:default true
 
-        :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
-                        ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
-        :delay   150    ;; to_delayed_action_delay_milliseconds (def: 500)
-                        ;; after :delay ms, the key press is considered to be delayed (used for double-press macros)
-        :alone   500    ;; to_if_alone_timeout_milliseconds (def: 1000)
-                        ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
-        :held    500    ;; to_if_held_down_threshold_milliseconds (def: 500)
-                        ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
-    }
-} ;; profiles
+                      :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
+                      ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
+                      :delay   150    ;; to_delayed_action_delay_milliseconds (def: 500)
+                      ;; after :delay ms, the key press is considered to be delayed (used for double-press macros)
+                      :alone   500    ;; to_if_alone_timeout_milliseconds (def: 1000)
+                      ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
+                      :held    500    ;; to_if_held_down_threshold_milliseconds (def: 500)
+                      ;; key is fired twice when :held ms is elapsed (otherwise seen as a hold command) (TODO WHAT IS THIS??)
+                      }};; profiles
 
 ; the default value is 250
-:simlayer-threshold 500
+ :simlayer-threshold 500
 
 
-;; layers are basically "hyper" keys
-;; press this in combination with something else and depending on your rule, make things happen
-:layers {
-    :caps-mode {:key :caps_lock :alone {:key :escape}}
-} ;; layers
+ ;; layers are basically "hyper" keys
+ ;; press this in combination with something else and depending on your rule, make things happen
+ :layers {:caps-mode {:key :caps_lock :alone {:key :escape}}} ;; layers
 
-;; simlayers are basically "hyper" keys
-;; layers works too, but only recommended for non-typing keys like . or tab
-;; to use more regular typing keys, use simlayers
-:simlayers {
-  :caps_lock-mode {:key :caps_lock}
-} ;; simlayers
+ ;; simlayers are basically "hyper" keys
+ ;; layers works too, but only recommended for non-typing keys like . or tab
+ ;; to use more regular typing keys, use simlayers
+ :simlayers {:caps_lock-mode {:key :caps_lock}} ;; simlayers
 
-:applications {
-    :terminals  [ "^com\\.apple\\.Terminal$",
-                 "^com\\.googlecode\\.iterm2$",
-                 "^net\\.kovidgoyal\\.kitty$"]
-}
+ :applications {:terminals  ["^com\\.apple\\.Terminal$",
+                             "^com\\.googlecode\\.iterm2$",
+                             "^net\\.kovidgoyal\\.kitty$"]}
 
-;; main contains multiple manipulators
-:main [
+ ;; main contains multiple manipulators
+ :main [;; each manipulator has a description and multiple rules
 
-    ;; each manipulator has a description and multiple rules
+        ;;{:des "..."                               ;; -> description
+        ;; :rules[
+        ;;          [<from>  <to>  <conditions>]    ;; -> rule 1
+        ;;          [<from>  <to>  <conditions>]    ;; -> rule 2
+        ;; ]}
 
-    ;;{:des "..."                               ;; -> description
-    ;; :rules[
-    ;;          [<from>  <to>  <conditions>]    ;; -> rule 1
-    ;;          [<from>  <to>  <conditions>]    ;; -> rule 2
-    ;; ]}
+        ;; rule [:period ["period-mode" 1] nil {:afterup ["period-mode" 0] :alone :period}]
+        ;;       |_____| |_______________| |_| |_________________________________________|
+        ;;        <from>    <to>      <conditions>         <other options>
+        ;;
+        ;; karabiner docs: ;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
+        ;; <other options> includs ~to_if_alone~, ~to_if_held_down~,~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
+        ;;
 
-    ;; rule [:period ["period-mode" 1] nil {:afterup ["period-mode" 0] :alone :period}]
-    ;;       |_____| |_______________| |_| |_________________________________________|
-    ;;        <from>    <to>      <conditions>         <other options>
-    ;;
-    ;; karabiner docs: ;; https://pqrs.org/osx/karabiner/json.html#complex_modifications-manipulator-definition
-    ;; <other options> includs ~to_if_alone~, ~to_if_held_down~,~to_after_key_up~, ~to_delayed_action~ and ~parameters~.
-    ;;
+        ;; (custom variables) & modifiers -> Advanced
+        ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org#custom-variable
 
-    ;; (custom variables) & modifiers -> Advanced
-    ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org#custom-variable
+        {:des "testing"
+         :rules [;; Alt -> Hyper
+                 [:##right_alt :!QWEright_shift]
 
-    {:des "testing"
-        :rules [
+                 ;; easier reach to modifier keys
+                 ;;[:##slash :right_command  nil {:alone :slash}]
+                 ;; [:##z     :left_control   nil {:alone :z}]
 
-          ;; Alt -> Hyper
-          [:##right_alt :!QWEright_shift]
+                 ;; easier key launches
+                 ;;[[:f :j] :!Ospacebar] ;; alfred
 
-          ;; easier reach to modifier keys
-          ;;[:##slash :right_command  nil {:alone :slash}]
-          ;; [:##z     :left_control   nil {:alone :z}]
-
-          ;; easier key launches
-          ;;[[:f :j] :!Ospacebar] ;; alfred
-
-          ;; Alt -> [] or Meh(Control Shift Option): secondary thumb keys
-          ;; [:right_alt :!CTOleft_shift :apple]
-          ;; [:##application :!TOleft_shift :g915]
+                 ;; Alt -> [] or Meh(Control Shift Option): secondary thumb keys
+                 ;; [:right_alt :!CTOleft_shift :apple]
+                 ;; [:##application :!TOleft_shift :g915]
           ; [:##left_control :!TOleft_shift :apple]
-    ]}
+                 ]}
 
-    ;; ----------------------------------
-    ;; Hardware keyboard mappings
-    ;; ----------------------------------
+        ;; ----------------------------------
+        ;; Hardware keyboard mappings
+        ;; ----------------------------------
 
-    ;; ----------------------------------
-    ;; Key mappings
-    ;; ----------------------------------
+        ;; ----------------------------------
+        ;; Key mappings
+        ;; ----------------------------------
 
-    ;; This (simlayer) didn't work as well as layer because of a delay.
-    ;; {:des "Caps to hyper, esc if alone",
-    ;;      :rules [:caps_lock-mode
-    ;;              [:open_bracket :!!open_bracket]
-    ;;              [:close_bracket :!!close_bracket]
-    ;;              [:semicolon :!!semicolon]
-    ;;              [:quote :!!quote]
-    ;;              [:comma :!!comma]
-    ;;              [:period :!!period]
-    ;;              [:slash :!!slash]
-    ;;              [:a :!!a]
-    ;;              [:b :!!b]
-    ;;              [:c :!!c]
-    ;;              [:d :!!d]
-    ;;              [:e :!!e]
-    ;;              [:f :!!f]
-    ;;              [:g :!!g]
-    ;;              [:h :!!h]
-    ;;              [:i :!!i]
-    ;;              [:j :!!j]
-    ;;              [:k :!!k]
-    ;;              [:l :!!l]
-    ;;              [:m :!!m]
-    ;;              [:n :!!n]
-    ;;              [:o :!!o]
-    ;;              [:p :!!p]
-    ;;              [:q :!!q]
-    ;;              [:r :!!r]
-    ;;              [:s :!!s]
-    ;;              [:t :!!t]
-    ;;              [:u :!!u]
-    ;;              [:v :!!v]
-    ;;              [:w :!!w]
-    ;;              [:x :!!x]
-    ;;              [:y :!!y]
-    ;;              [:z :!!z]
-    ;;              [:1 :!!1]
-    ;;              [:2 :!!2]
-    ;;              [:3 :!!3]
-    ;;              [:4 :!!4]
-    ;;              [:5 :!!5]
-    ;;              [:6 :!!6]
-    ;;              [:8 :!!8]
-    ;;              [:7 :!!7]
-    ;;              [:9 :!!9]
-    ;;              [:0 :!!0]]}
+        ;; This (simlayer) didn't work as well as layer because of a delay.
+        ;; {:des "Caps to hyper, esc if alone",
+        ;;      :rules [:caps_lock-mode
+        ;;              [:open_bracket :!!open_bracket]
+        ;;              [:close_bracket :!!close_bracket]
+        ;;              [:semicolon :!!semicolon]
+        ;;              [:quote :!!quote]
+        ;;              [:comma :!!comma]
+        ;;              [:period :!!period]
+        ;;              [:slash :!!slash]
+        ;;              [:a :!!a]
+        ;;              [:b :!!b]
+        ;;              [:c :!!c]
+        ;;              [:d :!!d]
+        ;;              [:e :!!e]
+        ;;              [:f :!!f]
+        ;;              [:g :!!g]
+        ;;              [:h :!!h]
+        ;;              [:i :!!i]
+        ;;              [:j :!!j]
+        ;;              [:k :!!k]
+        ;;              [:l :!!l]
+        ;;              [:m :!!m]
+        ;;              [:n :!!n]
+        ;;              [:o :!!o]
+        ;;              [:p :!!p]
+        ;;              [:q :!!q]
+        ;;              [:r :!!r]
+        ;;              [:s :!!s]
+        ;;              [:t :!!t]
+        ;;              [:u :!!u]
+        ;;              [:v :!!v]
+        ;;              [:w :!!w]
+        ;;              [:x :!!x]
+        ;;              [:y :!!y]
+        ;;              [:z :!!z]
+        ;;              [:1 :!!1]
+        ;;              [:2 :!!2]
+        ;;              [:3 :!!3]
+        ;;              [:4 :!!4]
+        ;;              [:5 :!!5]
+        ;;              [:6 :!!6]
+        ;;              [:8 :!!8]
+        ;;              [:7 :!!7]
+        ;;              [:9 :!!9]
+        ;;              [:0 :!!0]]}
 
-    {:des "caps lock mode: hyper, quick reach for cursor etc."
-        :rules [:caps-mode
-            ;; switch tabs in most apps
-            ;; Cmd Shift [
-            [:##comma :!CSopen_bracket]
-            ;; Cmd Shift ]
-            [:##period :!CSclose_bracket]
+        {:des "caps lock mode: hyper, quick reach for cursor etc."
+         :rules [:caps-mode
+                 ;; switch tabs in most apps
+                 ;; Cmd Shift [
+                 [:##comma :!CSopen_bracket]
+                 ;; Cmd Shift ]
+                 [:##period :!CSclose_bracket]
 
-            ;; Quick Mouse handles
-            [:down_arrow {:mkey {:y 1536}}]
-            [:up_arrow {:mkey {:y -1536}}]
-            [:left_arrow {:mkey {:x -1536}}]
-            [:right_arrow {:mkey {:x 1536}}]
-            [:return_or_enter {:pkey :button1}]
-            [:!Creturn_or_enter {:pkey :button2}]
+                 ;; Quick Mouse handles
+                 [:down_arrow {:mkey {:y 1536}}]
+                 [:up_arrow {:mkey {:y -1536}}]
+                 [:left_arrow {:mkey {:x -1536}}]
+                 [:right_arrow {:mkey {:x 1536}}]
+                 [:return_or_enter {:pkey :button1}]
+                 [:!Creturn_or_enter {:pkey :button2}]
 
-            [:##a :!!a]
-            [:##b :!!b]
-            [:##c :!!c]
-            [:##d :!!d]
-            [:##e :!!e]
-            [:##f :!!f]
-            [:##g :!!g]
-            [:##h :!!h]
-            [:##i :!!i]
-            [:##j :!!j]
-            [:##k :!!k]
-            [:##l :!!l]
-            [:##m :!!m]
-            [:##n :!!n]
-            [:##o :!!o]
-            [:##p :!!p]
-            [:##q :!!q]
-            [:##r :!!r]
-            [:##s :!!s]
-            [:##t :!!t]
-            [:##u :!!u]
-            [:##v :!!v]
-            [:##w :!!w]
-            [:##x :!!x]
-            [:##y :!!y]
-            [:##z :!!z]
-            [:##1 :!!1]
-            [:##2 :!!2]
-            [:##3 :!!3]
-            [:##4 :!!4]
-            [:##5 :!!5]
-            [:##6 :!!6]
-            [:##8 :!!8]
-            [:##7 :!!7]
-            [:##9 :!!9]
-            [:##0 :!!0]
-            [:##semicolon :!!semicolon] ;; `o` in Colemak
-            [:##quote :!!quote] ;; `'` in Colemak
-    ]}
+                 [:##a :!!a]
+                 [:##b :!!b]
+                 [:##c :!!c]
+                 [:##d :!!d]
+                 [:##e :!!e]
+                 [:##f :!!f]
+                 [:##g :!!g]
+                 [:##h :!!h]
+                 [:##i :!!i]
+                 [:##j :!!j]
+                 [:##k :!!k]
+                 [:##l :!!l]
+                 [:##m :!!m]
+                 [:##n :!!n]
+                 [:##o :!!o]
+                 [:##p :!!p]
+                 [:##q :!!q]
+                 [:##r :!!r]
+                 [:##s :!!s]
+                 [:##t :!!t]
+                 [:##u :!!u]
+                 [:##v :!!v]
+                 [:##w :!!w]
+                 [:##x :!!x]
+                 [:##y :!!y]
+                 [:##z :!!z]
+                 [:##1 :!!1]
+                 [:##2 :!!2]
+                 [:##3 :!!3]
+                 [:##4 :!!4]
+                 [:##5 :!!5]
+                 [:##6 :!!6]
+                 [:##8 :!!8]
+                 [:##7 :!!7]
+                 [:##9 :!!9]
+                 [:##0 :!!0]
+                 [:##semicolon :!!semicolon] ;; `o` in Colemak
+                 [:##quote :!!quote] ;; `'` in Colemak
+                 ]}
 
-    {:des   "right_command to ` when pressed alone"
+        {:des   "right_command to ` when pressed alone"
          :rules [[:##right_command :right_command nil {:alone :grave_accent_and_tilde}]]}
 
-    {:des   "Right Shift to Bleh [⌥⇧] (? if alone)"
+        {:des   "Right Shift to Bleh [⌥⇧] (? if alone)"
          :rules [[:##right_shift :!Oright_shift nil {:alone :!Sslash}]]}
 
-    {:des   "left_option to esc when pressed alone"
+        {:des   "left_option to esc when pressed alone"
          :rules [[:##left_option :left_option nil {:alone :escape}]]}
 
-    {:des   "right_control to ! when pressed alone"
+        {:des   "right_control to ! when pressed alone"
          :rules [[:##right_control :right_control nil {:alone :!S1}]]}
 
-    {:des   "left_control to ! when pressed alone"
+        {:des   "left_control to ! when pressed alone"
          :rules [[:##left_control :left_control nil {:alone :!S2}]]}
 
-
-    {:des   "tab is tab, Shift+Command if held"
-        :rules [[:##tab :tab nil {:held :!Sleft_command}]]}
-    ;; For some reason, this inverse doesn't work in Google web apps to autocomplete chips.
-    ;; {:des   "tab to Shift + Command when held down"
-    ;;      :rules [[:##tab :!Sleft_command nil {:alone :tab}]]}
-
-] ;; main list
-
-}
+        {:des   "tab is tab, Shift+Command if held"
+         :rules [[:##tab :tab nil {:held :!Sleft_command}]]}
+        ;; For some reason, this inverse doesn't work in Google web apps to autocomplete chips.
+        ;; {:des   "tab to Shift + Command when held down"
+        ;;      :rules [[:##tab :!Sleft_command nil {:alone :tab}]]}
+        ];; main list
+ }
