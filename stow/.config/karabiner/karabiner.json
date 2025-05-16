@@ -3,7 +3,7 @@
     "complex_modifications" : {
       "parameters" : {
         "basic.simultaneous_threshold_milliseconds" : 50,
-        "basic.to_delayed_action_delay_milliseconds" : 500,
+        "basic.to_delayed_action_delay_milliseconds" : 300,
         "basic.to_if_alone_timeout_milliseconds" : 500,
         "basic.to_if_held_down_threshold_milliseconds" : 500
       },
@@ -29,6 +29,58 @@
           "to_if_alone" : [ {
             "key_code" : "escape"
           } ]
+        } ]
+      }, {
+        "description" : "hyper+r (r)aycast sublayer keys",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "t",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open raycast://extensions/josephschmitt/gif-search/search"
+          } ],
+          "conditions" : [ {
+            "name" : "r-sub-layer-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "quote",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+          } ],
+          "conditions" : [ {
+            "name" : "r-sub-layer-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "s",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "s",
+            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "r-sub-layer-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
         } ]
       }, {
         "description" : "hyper+o (o)pen sublayer keys",
@@ -981,14 +1033,69 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "quote",
+            "key_code" : "semicolon",
             "modifiers" : {
               "optional" : [ "any" ]
             }
           },
           "to" : [ {
-            "key_code" : "quote",
+            "key_code" : "semicolon",
             "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "caps-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "key_code" : "slash",
+            "modifiers" : {
+              "optional" : [ "any" ]
+            }
+          },
+          "to" : [ {
+            "key_code" : "slash",
+            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
+          } ],
+          "conditions" : [ {
+            "name" : "caps-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "to_if_alone" : [ {
+            "set_variable" : {
+              "name" : "r-sub-layer-mode",
+              "value" : 1
+            }
+          } ],
+          "to_delayed_action" : {
+            "to_if_invoked" : [ {
+              "key_code" : "s"
+            }, {
+              "set_variable" : {
+                "name" : "r-sub-layer-mode",
+                "value" : 0
+              }
+            } ],
+            "to_if_canceled" : [ {
+              "set_variable" : {
+                "name" : "r-sub-layer-mode",
+                "value" : 0
+              }
+            } ]
+          },
+          "from" : {
+            "key_code" : "s"
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "r-sub-layer-mode",
+              "value" : 1
+            }
           } ],
           "conditions" : [ {
             "name" : "caps-mode",
@@ -1107,7 +1214,7 @@
           "type" : "basic"
         } ]
       }, {
-        "description" : "left_control to ! when pressed alone",
+        "description" : "left_control to @ when pressed alone",
         "manipulators" : [ {
           "to_if_alone" : [ {
             "key_code" : "2",

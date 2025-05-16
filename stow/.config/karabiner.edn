@@ -51,7 +51,7 @@
 
                       :sim     50     ;; simultaneous_threshold_milliseconds (def: 50)
                       ;; if keydown event for two different keys are pressed within :sim ms, the keypresses are considered simultaneous
-                      :delay   500    ;; to_delayed_action_delay_milliseconds (def: 500)
+                      :delay   300    ;; to_delayed_action_delay_milliseconds (def: 500)
                       ;; after :delay ms, the key press is considered to be delayed (used for double-press macros)
                       :alone   500    ;; to_if_alone_timeout_milliseconds (def: 1000)
                       ;; if keyup event comes within :alone ms from keydown, the key is not just pressed but held
@@ -168,6 +168,14 @@
         ;;              [:9 :!!9]
         ;;              [:0 :!!0]]}
 
+        {:des "hyper+r (r)aycast sublayer keys"
+ :rules [;; Map qwerty equivalent in Colemak, i.e. k for e.
+         ;; g
+         [:##t "open raycast://extensions/josephschmitt/gif-search/search" [:r-sub-layer-mode]]
+         ;; '
+         [:##quote "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols" [:r-sub-layer-mode]]
+         ;; Double tap to send the original key
+         [:##s :!!s [:r-sub-layer-mode]]]}
         {:des "hyper+o (o)pen sublayer keys"
          :rules [;; Map qwerty equivalent in Colemak, i.e. k for e.
                  [:##b "open -a \"$HOME/Applications/Chrome Apps.localized/Google Chat.app\"" [:o-sub-layer-mode]]
@@ -226,6 +234,7 @@
                  [:##p :!!p]
                  [:##q :!!q]
                  [:##r :!!r]
+                 ;; Comment out below to enable `r-sub-layer-mode`.
                  [:##s :!!s]
                  [:##t :!!t]
                  [:##u :!!u]
@@ -244,10 +253,52 @@
                  [:##7 :!!7]
                  [:##9 :!!9]
                  [:##0 :!!0]
-                 ;;   [:##semicolon :!!semicolon] ;; `o` in Colemak
+                 ;; Comment out below to enable `o-sub-layer-mode`.
+                 [:##semicolon :!!semicolon] ;; `o` in Colemak
 
-                 [:##quote :!!quote] ;; `'` in Colemak
+                ;;  [:##quote :!!quote] ;; `'` in Colemak
+                 [:##slash :!!slash]
 
+                ;; Reference code for sublayer modes.
+                ;;   {:des "tap sub layer then keys"
+                ;;    :rules [; If o-sub-layer-mode is on, run this command when a is
+                ;;            ; pressed. Anything that depends on the o-sub-layer-mode being
+                ;;            ; set must come _before_ the delayed declaration.
+                ;;            [:a "open https://github.com/yqrashawn/GokuRakuJoudo" [:o-sub-layer-mode]]
+                ;;            [:b "open -a Arc.app" [:o-sub-layer-mode]]
+                ;;            ;; One idea of working around being able to send cmd+o
+                ;;            [:o :!Csemicolon [:o-sub-layer-mode]]
+                ;;            ;; # Doesn't work because then can't send 'o' without it being caught
+                ;;            ;; #  | optional (single)
+                ;;            ;;                  specified modifier is kept in output (to event)
+                ;;            ;;                  one (or none) of the specified modifiers must be present
+                ;;            ;;                  adding any other modifier will cancel the event
+                ;;            ;;
+                ;;            ;; ## Doesn't work because then cmd+shift o will trigger it
+                ;;            ;; ## | optional any
+                ;;            ;;                  specified modifier is removed in output (to event)
+                ;;            ;;                  specified modifiers *must* be present for event to occur
+                ;;            ;;                  adding any other modifier will add to output event
+                ;;            ;;                  (what you typically expect, additional modifiers tacked on)
+                ;;            ;;
+                ;;            ; ! is best but downsides of ! in next line are:
+                ;;            ; - To output modifier+key, you need to hold the modifier until the timeout completes.
+                ;;            ; - If you activate the mode but don't complete the sequence within 500ms (:invoked), then key without modifier will be output.
+                ;;            ;; TODO: Need to find a key that will never be used for anything else.
+                ;;            [:!Csemicolon ["o-sub-layer-mode" 1] nil
+                ;;               ; and if sublayer key is pressed alone, trigger o-sub-layer-mode variable
+                ;;             {:alone ["o-sub-layer-mode" 1]
+                ;;               ; when another key is invoked, or after a timeout, set the mode back to zero
+                ;;              :delayed {:invoked [:!Csemicolon ["o-sub-layer-mode" 0]] :canceled ["o-sub-layer-mode" 0]}}]]}
+
+                 ;; Any rule that depends on o-sub-layer-mode being set must come before the delayed declaration.
+                 ;;  Enable r-sub-layer-mode
+                 [:s ["r-sub-layer-mode" 1] nil
+                    ; and if sublayer key is pressed alone, trigger r-sub-layer-mode variable
+                  {:alone ["r-sub-layer-mode" 1]
+                    ; when another key is invoked, or after a timeout, set the mode back to zero
+                   :delayed {:invoked [:##s ["r-sub-layer-mode" 0]] :canceled ["r-sub-layer-mode" 0]}}]
+                 ;;  Enable o-sub-layer-mode
                  [:semicolon ["o-sub-layer-mode" 1] nil
                     ; and if sublayer key is pressed alone, trigger o-o-sub-layer-mode variable
                   {:alone ["o-sub-layer-mode" 1]
@@ -257,37 +308,6 @@
         ;; TODO: Consider a modifier key on the base layer. Two-Stroke
         ;Keybindings per
         ;https://github.com/yqrashawn/GokuRakuJoudo/blob/master/examples.org#two-stroke-keybindings-emacs-c-x-mode
-
-        ;;   {:des "tap sub layer then keys"
-        ;;    :rules [; If o-sub-layer-mode is on, run this command when a is
-        ;;            ; pressed. Anything that depends on the o-sub-layer-mode being
-        ;;            ; set must come _before_ the delayed declaration.
-        ;;            [:a "open https://github.com/yqrashawn/GokuRakuJoudo" [:o-sub-layer-mode]]
-        ;;            [:b "open -a Arc.app" [:o-sub-layer-mode]]
-        ;;            ;; One idea of working around being able to send cmd+o
-        ;;            [:o :!Csemicolon [:o-sub-layer-mode]]
-        ;;            ;; # Doesn't work because then can't send 'o' without it being caught
-        ;;            ;; #  | optional (single)
-        ;;            ;;                  specified modifier is kept in output (to event)
-        ;;            ;;                  one (or none) of the specified modifiers must be present
-        ;;            ;;                  adding any other modifier will cancel the event
-        ;;            ;;
-        ;;            ;; ## Doesn't work because then cmd+shift o will trigger it
-        ;;            ;; ## | optional any
-        ;;            ;;                  specified modifier is removed in output (to event)
-        ;;            ;;                  specified modifiers *must* be present for event to occur
-        ;;            ;;                  adding any other modifier will add to output event
-        ;;            ;;                  (what you typically expect, additional modifiers tacked on)
-        ;;            ;;
-        ;;            ; ! is best but downsides of ! in next line are:
-        ;;            ; - To output modifier+key, you need to hold the modifier until the timeout completes.
-        ;;            ; - If you activate the mode but don't complete the sequence within 500ms (:invoked), then key without modifier will be output.
-        ;;            ;; TODO: Need to find a key that will never be used for anything else.
-        ;;            [:!Csemicolon ["o-sub-layer-mode" 1] nil
-        ;;               ; and if sublayer key is pressed alone, trigger o-sub-layer-mode variable
-        ;;             {:alone ["o-sub-layer-mode" 1]
-        ;;               ; when another key is invoked, or after a timeout, set the mode back to zero
-        ;;              :delayed {:invoked [:!Csemicolon ["o-sub-layer-mode" 0]] :canceled ["o-sub-layer-mode" 0]}}]]}
 
         {:des   "right_command to ` when pressed alone"
          :rules [[:##right_command :right_command nil {:alone :grave_accent_and_tilde}]]}
@@ -301,7 +321,7 @@
         {:des   "right_control to ! when pressed alone"
          :rules [[:##right_control :right_control nil {:alone :!S1}]]}
 
-        {:des   "left_control to ! when pressed alone"
+        {:des   "left_control to @ when pressed alone"
          :rules [[:##left_control :left_control nil {:alone :!S2}]]}
 
         {:des   "tab is tab, Shift+Command if held"
