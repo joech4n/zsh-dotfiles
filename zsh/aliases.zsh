@@ -11,10 +11,16 @@ unset fasd_cache
 # fasd & fzf change directory - jump using to frecent dirs (from `fasd`) if
 # given argument, else filter frecent dirs using `fzf`
 # unalias first, because fasd sets this by default
-unalias z; alias z='fasd_fzf_cd_smart'
+if alias z >/dev/null 2>&1; then
+  unalias z
+fi
+alias z='fasd_fzf_cd_smart'
 
 # like z, but requires arg to filter initial frecent directories to present
-unalias zz; alias zz='fasd_fzf_cd_filtered'
+if alias zz >/dev/null 2>&1; then
+  unalias zz
+fi
+alias zz='fasd_fzf_cd_filtered'
 
 # utility fasd functions similar to fasd's f, usually used to pipe into other
 # commands
