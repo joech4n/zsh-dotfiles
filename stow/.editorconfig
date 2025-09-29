@@ -6,10 +6,17 @@ root = true
 
 # Defaults for every file
 [*]
-end_of_line = lf            # Unix-style newlines
-insert_final_newline = true # newline ending every file
+# Unix-style newlines
+end_of_line = lf
+# newline ending every file
+insert_final_newline = true
 trim_trailing_whitespace = true
 
 # Indents
 indent_style = space
 indent_size = 4
+
+[*.yaml]
+indent_style = space
+indent_size = 2
+
