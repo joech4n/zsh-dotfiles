@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# options=(
+# 	style=round
+# 	width=6.0
+# 	hidpi=off
+# 	active_color=0xffe2e2e3
+# 	inactive_color=0xff414550
+# )
+
+#!/bin/bash
+
+# options=(
+#   style=round
+#   width=4.0
+#   hidpi=on
+#   active_color="glow(0xff99ccff)"     # soft blue glow for focus
+#   inactive_color=0xff303340           # muted gray for inactive windows
+#   order=above                         # ensures border overlays window shadows
+# )
+
+options=(
+	style=round
+	width=4.0
+	hidpi=on
+	active_color=0xffffffff  # pure bright white
+	inactive_color=0xff494d64  # keep muted dark gray
+	order=above
+)
+
+borders "${options[@]}"
