@@ -16,11 +16,10 @@ mod2:
 mouse-resizes-windows: true
 
 floating:
-    - net.kovidgoyal.kitty
     - com.google.Chrome
     - com.1password.1password
-    - company.thebrowser.Browser
     - com.apple.systempreferences
+    - com.microsoft.VSCode
 
 toggle-focus-follows-mouse:
     mod: mod1
