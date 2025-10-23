@@ -20,6 +20,9 @@ floating:
     - com.1password.1password
     - com.apple.systempreferences
     - com.microsoft.VSCode
+    - com.brnbw.Leader-Key
+    - com.google.Chrome.app.apkjikbjlghbonboeaehkeoadefnfjmb # $HOME/Applications/Chrome Apps.localized/Cider.app
+    - com.google.Chrome.app.fmgjjmmmlfnkbppncabfkddbjimcfncm # $HOME/Applications/Chrome Apps.localized/Gmail.app
 
 toggle-focus-follows-mouse:
     mod: mod1
