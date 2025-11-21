@@ -1,9 +1,9 @@
 layouts:
-    - tall
     - fullscreen
-    - middle-wide
     - bsp
-    - two-pane
+    # - middle-wide
+    # - two-pane
+    # - tall
 
 mod1:
     - option
@@ -13,10 +13,25 @@ mod2:
     - shift
     - control
 
+# Disable mod + <space>
+cycle-layout:
+    mod: <NONE>
+    key: <NONE>
+
+# Disable mod + n
+focus-screen-cw:
+    mod: <NONE>
+    key: <NONE>
+
 mouse-resizes-windows: true
+# focus-follows-mouse: true
+mouse-follows-focus: false
 
 floating:
+    # Find IDs with: osascript -e 'id of app "Google Chrome Beta"'
     - com.google.Chrome
+    - com.google.Chrome.beta
+    - com.google.Chrome.canary
     - com.1password.1password
     - com.apple.systempreferences
     - com.microsoft.VSCode
@@ -27,3 +42,7 @@ floating:
 toggle-focus-follows-mouse:
     mod: mod1
     key: x
+
+select-bsp-layout:
+    mod: mod1
+    key: b
