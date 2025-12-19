@@ -157,3 +157,6 @@ xsource ${HOME}/.dotfiles/zsh/aliases.zsh
 xsource ${HOME}/.fzf.zsh
 xsource ${HOME}/.zshrc.local
 xsource ${HOME}/.zshrc.secret # last, for secrets
+
+# Added by Jetski
+export PATH="$HOME/.jetski/jetski/bin:$PATH"
