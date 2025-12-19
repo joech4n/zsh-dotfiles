@@ -160,3 +160,6 @@ xsource ${HOME}/.zshrc.secret # last, for secrets
 
 # Added by Jetski
 export PATH="$HOME/.jetski/jetski/bin:$PATH"
+
+# Visual Studio Code shell integration per https://code.visualstudio.com/docs/terminal/shell-integration
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
