@@ -70,7 +70,8 @@
  ;; simlayers are basically "hyper" keys
  ;; layers works too, but only recommended for non-typing keys like . or tab
  ;; to use more regular typing keys, use simlayers
- :simlayers {:caps_lock-mode {:key :caps_lock}} ;; simlayers
+ :simlayers {:caps_lock-mode {:key :caps_lock}
+             :one-mode {:key :1}} ;; simlayers
 
  :applications {:terminals  ["^com\\.apple\\.Terminal$",
                              "^com\\.googlecode\\.iterm2$",
@@ -323,6 +324,23 @@
 
         {:des   "left_control to @ when pressed alone"
          :rules [[:##left_control :left_control nil {:alone :!S2}]]}
+
+        {:des "One Mode: Colemak Numpad (Right Hand)"
+         :rules [:one-mode
+            [:spacebar :0]
+            [:m :1]
+            [:comma :2]
+            [:period :3]
+            [:j :4]
+            [:k :5]
+            [:l :6]
+            [:u :7]
+            [:i :8]
+            [:o :9]
+            [:p :hyphen]
+            [:semicolon :!Sequal_sign]
+            [:right_shift :return_or_enter]
+         ]}
 
         {:des   "tab is tab, Shift+Command if held"
          :rules [[:##tab :tab nil {:held :!Sleft_command}]]}
