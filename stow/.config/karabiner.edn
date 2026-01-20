@@ -112,6 +112,25 @@
                  ;; [:right_alt :!CTOleft_shift :apple]
                  ;; [:##application :!TOleft_shift :g915]
                  ;; [:##left_control :!TOleft_shift :apple]
+
+                 ;; Simultaneous key combos
+                 [[:q :r] :!Ca]  ;; q + p → CMD+A (select all)
+                 [[:x :c] :!Cc]  ;; x + c → CMD+C (copy)
+                 [[:c :v] :!Cv]  ;; c + v → CMD+V (paste)
+                 [[:v :b] :!Cx]  ;; v + b → CMD+X (cut)
+                 [[:z :x] :!Cz]  ;; z + x → CMD+Z (undo)
+                 [[:z :x :c] :!CSz]  ;; z + x + c → CMD+SHIFT+Z (redo)
+                 [[:s :d :j] :!Odelete_or_backspace]  ;; s + d + j → Option+Backspace (delete word)
+                 [[:z :c] [:!Ca :!Cc]]  ;; z + c → CMD+A then CMD+C (select all + copy)
+                 [[:q :w] [:!Ta :!CSright_arrow]]  ;; q + w → Ctrl+A then Shift+Cmd+Right (select to end of line)
+                 [[:z :v] :!CSv]  ;; z + v → CMD+SHIFT+V (clipboard manager)
+                 [[:i :o] [:o :semicolon :i]]  ;; i + o → types 'you' (o;i in Colemak)
+                 [[:q :f] [:f :h :a :f]]  ;; q + f → types 'that' (fhaf in Colemak)
+                 [[:d :f :j] [:f :h :k]]  ;; d + f + j → types 'the' (fhk in Colemak)
+                 [[:e :r] :!Ctab]  ;; e + r → CMD+Tab (switch apps)
+                 [[:w :e] :!Cspacebar]  ;; w + e → CMD+Space (launcher)
+                 [[:q :e] [:grave_accent_and_tilde :grave_accent_and_tilde :left_arrow]]  ;; q + e → types `` then left_arrow (inline code in markdown)
+                 [[:q :t] [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]]  ;; q + t → types ``` (code block in markdown)
                  ]}
 
         ;; ----------------------------------
