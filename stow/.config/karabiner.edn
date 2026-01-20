@@ -257,9 +257,14 @@
                  ;; Comment out below to enable `o-sub-layer-mode`.
                  [:##semicolon :!!semicolon] ;; `o` in Colemak
 
-                ;;  [:##quote :!!quote] ;; `'` in Colemak
+                 [:##quote :!!quote] ;; `'` in Colemak
                  [:##slash :!!slash]
-
+                 [:##open_bracket :!!open_bracket]
+                 [:##close_bracket :!!close_bracket]
+                 [:##hyphen :!!hyphen]
+                 [:##equal_sign :!!equal_sign]
+                 [:##backslash :!!backslash]
+                 [:##grave_accent_and_tilde :!!grave_accent_and_tilde]
                 ;; Reference code for sublayer modes.
                 ;;   {:des "tap sub layer then keys"
                 ;;    :rules [; If o-sub-layer-mode is on, run this command when a is
