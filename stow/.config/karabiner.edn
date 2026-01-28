@@ -122,6 +122,7 @@
                  [[:z :x :c] :!CSz]  ;; z + x + c → CMD+SHIFT+Z (redo)
                  [[:s :d :j] :!Odelete_or_backspace]  ;; s + d + j → Option+Backspace (delete word)
                  [[:z :c] [:!Ca :!Cc]]  ;; z + c → CMD+A then CMD+C (select all + copy)
+                 [[:z :b] [:!Ca :!Cv]]  ;; z + b → CMD+A then CMD+V (select all + paste)
                  [[:q :w] [:!Ta :!CSright_arrow]]  ;; q + w → Ctrl+A then Shift+Cmd+Right (select to end of line)
                  [[:z :v] :!CSv]  ;; z + v → CMD+SHIFT+V (clipboard manager)
                  [[:i :o] [:o :semicolon :i]]  ;; i + o → types 'you' (o;i in Colemak)
