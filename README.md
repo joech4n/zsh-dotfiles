@@ -2,7 +2,7 @@
 
     git clone git@github.com:joech4n/zsh-dotfiles.git ~/.dotfiles
     ~/.dotfiles/script/bootstrap
-    cd ~/.dotfiles && stow stow
+    cd ~/.dotfiles && stow -t ~ stow
 
 ## install
 

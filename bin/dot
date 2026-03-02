@@ -48,8 +48,9 @@ print_status2 () {
 
 
 # Dotfiles
+DOTFILES_ROOT="${0:A:h:h}"
 MESSAGE="update personal dotfiles"; print_status1 "${MESSAGE}"
-cd ${HOME}/.dotfiles && git pull >/dev/null && stow stow
+cd "${DOTFILES_ROOT}" && git pull >/dev/null && stow -v -t "${HOME}" stow
 print_status2 $? ${MESSAGE}
 
 # Grml config
