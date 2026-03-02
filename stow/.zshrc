@@ -163,3 +163,8 @@ export PATH="$HOME/.jetski/jetski/bin:$PATH"
 
 # Visual Studio Code shell integration per https://code.visualstudio.com/docs/terminal/shell-integration
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/chanjoe/.lmstudio/bin"
+# End of LM Studio CLI section
+
