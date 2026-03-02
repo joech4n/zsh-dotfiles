@@ -11,3 +11,4 @@
 
 # Migrated to chezmoi
 \.config/kitty
+\.gitconfig
