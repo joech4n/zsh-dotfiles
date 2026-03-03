@@ -60,11 +60,6 @@ if command -v chezmoi >/dev/null 2>&1; then
   print_status2 $? ${MESSAGE}
 fi
 
-# Grml config
-MESSAGE="update grml config"; print_status1 "${MESSAGE}"
-cd ~/.grml-etc-core && git pull >/dev/null
-print_status2 $? ${MESSAGE}
-
 
 if [[ ${FULL} != true ]]; then
   exit 0
