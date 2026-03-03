@@ -13,3 +13,4 @@
 \.config/kitty
 \.gitconfig
 \.gitignore
+zsh/aliases\.zsh
