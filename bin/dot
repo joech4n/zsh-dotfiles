@@ -53,6 +53,13 @@ MESSAGE="update personal dotfiles"; print_status1 "${MESSAGE}"
 cd "${DOTFILES_ROOT}" && git pull >/dev/null && stow -v -t "${HOME}" stow
 print_status2 $? ${MESSAGE}
 
+# Chezmoi (chi)
+if command -v chezmoi >/dev/null 2>&1; then
+  MESSAGE="update chezmoi managed dotfiles"; print_status1 "${MESSAGE}"
+  chezmoi update -v
+  print_status2 $? ${MESSAGE}
+fi
+
 # Grml config
 MESSAGE="update grml config"; print_status1 "${MESSAGE}"
 cd ~/.grml-etc-core && git pull >/dev/null
