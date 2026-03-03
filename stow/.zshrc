@@ -153,7 +153,7 @@ fi
 # nvim
 (( $+commands[nvim] )) && export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-xsource ${HOME}/.dotfiles/zsh/aliases.zsh
+xsource ${HOME}/.zsh_aliases
 xsource ${HOME}/.fzf.zsh
 xsource ${HOME}/.zshrc.local
 xsource ${HOME}/.zshrc.secret # last, for secrets
