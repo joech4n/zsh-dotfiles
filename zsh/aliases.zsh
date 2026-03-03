@@ -55,8 +55,9 @@ alias ......='cd ../../../../../'
 alias ax="chmod a+x"
 alias bail='tail -f $@ |bat --paging=never -l log'
 alias calc='bc <<<'
-isdarwin && alias clitxt='curl -sF "upfile=@-" https://clitxt.com |tee /dev/tty | pbcopy'
 alias ch='fzf_chrome_history'
+alias chi='chezmoi'
+isdarwin && alias clitxt='curl -sF "upfile=@-" https://clitxt.com |tee /dev/tty | pbcopy'
 alias copylastoutput="fc -e -|pbcopy && echo Copied output of last command to clipboard"
 alias count='sort | uniq -c | sort -rn'
 alias cpath='python -c "import os; import sys; print(os.path.realpath(sys.argv[1]))"'
