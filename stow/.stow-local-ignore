@@ -15,3 +15,7 @@
 \.gitignore
 zsh/aliases\.zsh
 \.tmux\.conf
+\.amethyst\.yml
+\.config/borders
+\.config/karabiner
+\.config/karabiner\.edn
