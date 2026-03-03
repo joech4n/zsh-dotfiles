@@ -68,23 +68,14 @@ fi
 ##########################################################
 ##### Full Update ########################################
 ##########################################################
-# Tmux Plugin Manager (tpm) and plugins
-if [ ! -d "${HOME}/.tmux/plugins/tpm" ]; then
-  if [ -L "${HOME}/.tmux" ]; then
-    unlink ~/.tmux
-  fi
-  MESSAGE="install tmux plugin manager (tpm) and plugins"; print_status1 "${MESSAGE}"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
-  print_status2 $? ${MESSAGE}
-else
-  MESSAGE="update tpm and plugins"; print_status1 "${MESSAGE}"
-  if [ -z "$TMUX" ]; then
-    print_status2 1 "${MESSAGE}: Not in tmux session."
-    exit 1
-  fi
-  ~/.tmux/plugins/tpm/bin/update_plugins all
-  print_status2 $? ${MESSAGE}
+# Tmux plugins
+MESSAGE="update tmux plugins"; print_status1 "${MESSAGE}"
+if [ -z "$TMUX" ]; then
+  print_status2 1 "${MESSAGE}: Not in tmux session."
+  exit 1
 fi
+~/.tmux/plugins/tpm/bin/update_plugins all
+print_status2 $? ${MESSAGE}
 
 # Vim
 MESSAGE="update vim plugin manager (vim-plugged)"; print_status1 "${MESSAGE}"
