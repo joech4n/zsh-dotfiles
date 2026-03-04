@@ -50,7 +50,7 @@ print_status2 () {
 # Dotfiles
 DOTFILES_ROOT="${0:A:h:h}"
 MESSAGE="update personal dotfiles"; print_status1 "${MESSAGE}"
-cd "${DOTFILES_ROOT}" && git pull >/dev/null && stow -v -t "${HOME}" stow
+cd "${DOTFILES_ROOT}" && git pull >/dev/null
 print_status2 $? ${MESSAGE}
 
 # Chezmoi (chi)
