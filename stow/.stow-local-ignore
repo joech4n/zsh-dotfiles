@@ -19,3 +19,4 @@ zsh/aliases\.zsh
 \.config/borders
 \.config/karabiner
 \.config/karabiner\.edn
+\.zshrc
