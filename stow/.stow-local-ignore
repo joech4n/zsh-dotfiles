@@ -20,3 +20,14 @@ zsh/aliases\.zsh
 \.config/karabiner
 \.config/karabiner\.edn
 \.zshrc
+\.ackrc
+\.bash_colors
+\.dir_colors
+\.editorconfig
+\.gemrc
+\.irbrc
+\.ripgreprc
+\.screenrc
+\.toprc
+\.vimrc.basic
+\.vromerc
