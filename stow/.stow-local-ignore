@@ -36,3 +36,5 @@ zsh/aliases\.zsh
 \.zshenv
 \.zlogin
 \.zlogout
+\.vimrc
+\.vim
