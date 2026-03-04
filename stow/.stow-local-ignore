@@ -31,3 +31,8 @@ zsh/aliases\.zsh
 \.toprc
 \.vimrc.basic
 \.vromerc
+\.zpreztorc
+\.zprofile
+\.zshenv
+\.zlogin
+\.zlogout
