@@ -39,3 +39,6 @@ zsh/aliases\.zsh
 \.vimrc
 \.vim
 \.doom\.d
+\.maid
+\.ranger
+\.spacemacs
